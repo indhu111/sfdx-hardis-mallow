@@ -1,0 +1,6 @@
+projectName: sfdx_mallow
+developmentBranch: dev
+autoCleanTypes:
+  - destructivechanges
+  - flowPositions
+  - minimizeProfiles
