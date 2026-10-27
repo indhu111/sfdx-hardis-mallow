@@ -9,9 +9,8 @@ on:
     # Add your major branches names here
     branches:
       - main
-      - preprod
       - uat
-      - integration
+      - dev
 permissions: read-all
 name: Simulate Deployment (sfdx-hardis)
 
@@ -50,12 +49,8 @@ jobs:
         if: ${{ !startsWith(github.head_ref, 'auto-fix/') &&
           !startsWith(github.ref_name, 'auto-fix/') }}
         env:
-          SFDX_CLIENT_ID_INTEGRATION: ${{ secrets.SFDX_CLIENT_ID_INTEGRATION}}
-          SFDX_CLIENT_KEY_INTEGRATION: ${{ secrets.SFDX_CLIENT_KEY_INTEGRATION}}
           SFDX_CLIENT_ID_UAT: ${{ secrets.SFDX_CLIENT_ID_UAT}}
           SFDX_CLIENT_KEY_UAT: ${{ secrets.SFDX_CLIENT_KEY_UAT}}
-          SFDX_CLIENT_ID_PREPROD: ${{ secrets.SFDX_CLIENT_ID_PREPROD}}
-          SFDX_CLIENT_KEY_PREPROD: ${{ secrets.SFDX_CLIENT_KEY_PREPROD}}
           SFDX_CLIENT_ID_MAIN: ${{ secrets.SFDX_CLIENT_ID_MAIN}}
           SFDX_CLIENT_KEY_MAIN: ${{ secrets.SFDX_CLIENT_KEY_MAIN}}
           SFDX_CLIENT_ID_DEV: ${{ secrets.SFDX_CLIENT_ID_DEV}}
