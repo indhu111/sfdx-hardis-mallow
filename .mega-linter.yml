@@ -15,6 +15,11 @@ DISABLE_LINTERS:
   - REPOSITORY_CHECKOV
   - REPOSITORY_GRYPE
 
+# zizmor reads the actions referenced by `uses:` through the GitHub API:
+# without the job token it cannot audit anything
+ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
+  - GITHUB_TOKEN
+
 # trivy downloads its vulnerability database on every run: a network error
 # must not block a merge
 DISABLE_ERRORS_LINTERS:
