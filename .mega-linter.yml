@@ -2,3 +2,22 @@
 EXTENDS:
   - https://raw.githubusercontent.com/hardisgroupcom/sfdx-hardis/main/config/sfdx-hardis.mega-linter-config.yml
 
+# .prettierrc loads prettier-plugin-apex and @prettier/plugin-xml from package.json:
+# install them in the workspace, or Prettier fails before checking anything
+PRE_COMMANDS:
+  - command: npm install --no-save --no-audit --no-fund prettier-plugin-apex @prettier/plugin-xml
+    cwd: workspace
+    continue_if_failed: false
+
+DISABLE_LINTERS:
+  # No Aura components: this analyzer would lint eslint.config.js and tooling instead
+  - SALESFORCE_CODE_ANALYZER_AURA
+  # No infrastructure code for checkov, and trivy already scans dependencies:
+  # both add minutes to every Pull Request and find nothing
+  - REPOSITORY_CHECKOV
+  - REPOSITORY_GRYPE
+
+# trivy downloads its vulnerability database on every run: a network error
+# must not block a merge
+DISABLE_ERRORS_LINTERS:
+  - REPOSITORY_TRIVY
