@@ -1,6 +1,36 @@
 projectName: sfdx_mallow
-developmentBranch: dev
+developmentBranch: main
 autoCleanTypes:
   - destructivechanges
   - flowPositions
   - minimizeProfiles
+codingAgentAutoFix: false
+flowDeleteInterviews: false
+flowDeleteMaxAttempts: 3
+flowDeleteRetryDelayMs: 10000
+apexTestsMinCoverageOrgWide: 75
+devHubAlias: ""
+devHubInstanceUrl: https://login.salesforce.com
+devHubUsername: ""
+enableDeltaDeploymentBetweenMajorBranches: false
+enablePromotionBranches: false
+enableDeploymentApexTestClasses: false
+enableDeprecatedDeploymentPlan: false
+installPackagesDuringCheckDeploy: false
+manualActionsFileUrl: ""
+manualActionsMode: externalFile
+newTaskNameRegex: ""
+newTaskNameRegexExample: ""
+notifTranslateDeploymentMessages: false
+orgAuthenticationMode: encryptedCert
+sharedDevSandboxes: false
+serviceNowAddDeploymentTag: false
+serviceNowCommentField: work_notes
+serviceNowPostDeploymentComments: true
+useDeltaDeployment: false
+useDeltaDeploymentWithDependencies: false
+useSmartDeploymentTests: false
+availableTargetBranches:
+  - dev
+  - uat
+  - main
