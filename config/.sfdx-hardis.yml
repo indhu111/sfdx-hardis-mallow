@@ -31,7 +31,7 @@ serviceNowPostDeploymentComments: true
 useDeltaDeployment: false
 useDeltaDeploymentWithDependencies: false
 useSmartDeploymentTests: false
-# Single entry on purpose: every User Story starts from and targets dev.
-# uat and main only receive work by promotion (dev -> uat -> main).
 availableTargetBranches:
   - dev
+  - uat
+  - main
