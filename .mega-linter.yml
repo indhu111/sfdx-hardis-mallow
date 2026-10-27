@@ -4,7 +4,11 @@ EXTENDS:
 
 # .prettierrc loads prettier-plugin-apex and @prettier/plugin-xml from package.json:
 # install them in the workspace, or Prettier fails before checking anything
-PRE_COMMANDS:
+JSON_PRETTIER_PRE_COMMANDS:
+  - command: npm install --no-save --no-audit --no-fund prettier-plugin-apex @prettier/plugin-xml
+    cwd: workspace
+    continue_if_failed: false
+YAML_PRETTIER_PRE_COMMANDS:
   - command: npm install --no-save --no-audit --no-fund prettier-plugin-apex @prettier/plugin-xml
     cwd: workspace
     continue_if_failed: false
