@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LinkedIn_URL__c</fullName>
+    <description>LinkedIn profile URL of the lead, used by sales to research the prospect before outreach.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Full LinkedIn profile link, e.g. https://www.linkedin.com/in/username</inlineHelpText>
+    <label>LinkedIn URL</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>

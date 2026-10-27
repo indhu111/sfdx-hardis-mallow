@@ -1,5 +1,6 @@
 projectName: sfdx_mallow
-developmentBranch: main
+developmentBranch: dev
+productionBranch: main
 autoCleanTypes:
   - destructivechanges
   - flowPositions
